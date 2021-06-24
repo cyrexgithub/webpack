@@ -31,7 +31,7 @@ module.exports = {
       return templateVersion
     },
   },
-  
+
   prompts: {
     name: {
       when: 'isNotTest',
@@ -73,6 +73,10 @@ module.exports = {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Install vue-router?',
+    },
+    vuex: {
+      "type": "confirm",
+      "message": "Install vuex?"
     },
     lint: {
       when: 'isNotTest',
@@ -171,7 +175,7 @@ module.exports = {
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
   },
-  complete: function(data, { chalk }) {
+  complete: function (data, { chalk }) {
     const green = chalk.green
 
     sortDependencies(data, green)
